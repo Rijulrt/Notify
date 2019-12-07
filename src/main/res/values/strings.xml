@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Never Forget</string>
+    <string name="title_reminders">Reminders</string>
+    <string name="title_notes">Notes</string>
+</resources>

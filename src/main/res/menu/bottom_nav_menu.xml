@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_reminders"
+        android:icon="@drawable/ic_class_black_24dp"
+        android:title="@string/title_reminders" />
+
+    <item
+        android:id="@+id/navigation_notes"
+        android:icon="@drawable/ic_note_black_24dp"
+        android:title="@string/title_notes" />
+
+</menu>
