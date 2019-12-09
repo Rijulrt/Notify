@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.neverforget.ui.notes.NotesFragment"
+        android:name="com.example.neverforget.ui.notes.NotesActivity"
         android:label="@string/title_notes"
-        tools:layout="@layout/fragment_notes" />
+        tools:layout="@layout/activity_notes" />
 </navigation>
