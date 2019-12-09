@@ -1,4 +1,4 @@
-package com.example.neverforget.ui.notifications;
+package com.example.neverforget.ui.notes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.neverforget.R;
 
-public class NotificationsFragment extends Fragment {
+public class NotesFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private NotesViewModel notesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        notesViewModel =
+                ViewModelProviders.of(this).get(NotesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_notes, container, false);
         final TextView textView = root.findViewById(R.id.editText2);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        notesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText("This is an editable text field for keeping notes.");

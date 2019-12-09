@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.neverforget.ui.home.HomeFragment"
+        android:name="com.example.neverforget.ui.reminder.ReminderFragment"
         android:label="@string/title_reminders"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_reminder" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.neverforget.ui.notifications.NotificationsFragment"
+        android:name="com.example.neverforget.ui.notes.NotesFragment"
         android:label="@string/title_notes"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_notes" />
 </navigation>

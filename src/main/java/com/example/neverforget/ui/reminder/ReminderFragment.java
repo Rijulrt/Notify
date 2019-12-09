@@ -1,4 +1,4 @@
-package com.example.neverforget.ui.home;
+package com.example.neverforget.ui.reminder;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,21 +15,21 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.neverforget.R;
 
-public class HomeFragment extends Fragment {
+public class ReminderFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ReminderViewModel reminderViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        reminderViewModel =
+                ViewModelProviders.of(this).get(ReminderViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_reminder, container, false);
         final Button addReminder = root.findViewById(R.id.addReminder);
         final TextView editText = root.findViewById(R.id.add_reminder);
         TextView textView = root.findViewById(R.id.checkedTextView);
 
         addReminder.setOnClickListener(unused -> textView.setText(editText.getText()));
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        reminderViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 editText.setText(s);
