@@ -10,7 +10,7 @@ public class ReminderViewModel extends ViewModel {
 
     public ReminderViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is the editText");
+        mText.setValue("Enter any reminders you have.");
     }
 
     public LiveData<String> getText() {

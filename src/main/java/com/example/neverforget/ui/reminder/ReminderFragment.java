@@ -1,10 +1,13 @@
 package com.example.neverforget.ui.reminder;
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckedTextView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -26,9 +29,15 @@ public class ReminderFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_reminder, container, false);
         final Button addReminder = root.findViewById(R.id.addReminder);
         final TextView editText = root.findViewById(R.id.add_reminder);
-        TextView textView = root.findViewById(R.id.checkedTextView);
-
+        LinearLayout linearLayout = root.findViewById(R.id.reminderLayout);
+        CheckedTextView textView = new CheckedTextView(getContext());
         addReminder.setOnClickListener(unused -> textView.setText(editText.getText()));
+        linearLayout.addView(textView);
+        //textView.setOnClickListener(unused -> textView.setCheckMarkDrawable());
+        if (!textView.isChecked()) {
+
+            textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }
         reminderViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
