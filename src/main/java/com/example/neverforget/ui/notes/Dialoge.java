@@ -5,6 +5,10 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
 
@@ -27,7 +31,12 @@ public class Dialoge extends DialogFragment {
                 .setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        // create new note
+                        LinearLayout linearLayout = findViewById(R.id.singleNote);
+                        linearLayout.removeAllViews();
+                        View noteChunk = getLayoutInflater().inflate(R.layout.chunk_notes,
+                                linearLayout, false);
+                        TextView textView = noteChunk.findViewById(R.id.subjectLine);
+                        Button button = noteChunk.findViewById(R.id.deleteButton);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
