@@ -3,4 +3,9 @@
     <string name="title_reminders">Reminders</string>
     <string name="title_notes">Notes</string>
     <string name="action_delete_all">Delete All Notes</string>
+    <string name="new_note">\tNew Note</string>
+    <string name="subject">Enter Subject</string>
+    <string name="cancel">Cancel</string>
+    <string name="create">Create</string>
+    <string name="no_notes">No Notes</string>
 </resources>
