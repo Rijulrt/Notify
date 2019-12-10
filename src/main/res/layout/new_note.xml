@@ -16,12 +16,12 @@
 
     <EditText
         android:id="@+id/actualNotes"
+        android:hint="Enter Notes..."
         android:layout_width="366dp"
         android:layout_height="647dp"
         android:ems="10"
         android:gravity="top|left"
-        android:inputType="textPersonName"
-        android:text="Herlloo"
+        android:inputType="textMultiLine"
         android:textAlignment="textStart"
         android:textSize="24sp"
         android:translationX="20sp"

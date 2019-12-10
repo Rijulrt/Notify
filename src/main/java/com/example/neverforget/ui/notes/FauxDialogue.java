@@ -1,5 +1,6 @@
 package com.example.neverforget.ui.notes;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.neverforget.R;
 
-public class FauxDialogue extends AppCompatActivity {
+public class FauxDialogue extends Activity {
 
     String subject;
     EditText subjectInput;

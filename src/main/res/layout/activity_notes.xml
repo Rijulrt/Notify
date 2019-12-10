@@ -33,7 +33,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@+/ap"
+        android:layout_height="match_parent"
         android:orientation="vertical"></LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
