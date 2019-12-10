@@ -53,7 +53,8 @@ public class NotesActivity extends AppCompatActivity {
                     delete.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
+                            llnotes.removeView(noteChunk);
+                            notePadList.remove(a);
                         }
                     });
                 }

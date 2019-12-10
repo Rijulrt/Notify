@@ -28,6 +28,7 @@ public class FauxDialogue extends Activity {
             @Override
             public void onClick(View v) {
                 subject = subjectInput.getText().toString();
+                subject = "\t \t" + subject;
                 Intent intent = new Intent(FauxDialogue.this, NotePad.class);
                 intent.putExtra("subject", subject);
                 startActivity(intent);
