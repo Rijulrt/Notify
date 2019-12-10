@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/LinearLay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/makeSubject"
+        android:layout_width="310sp"
+        android:layout_height="63dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/actualNotes"
+        android:layout_width="366dp"
+        android:layout_height="647dp"
+        android:ems="10"
+        android:gravity="top|left"
+        android:inputType="textPersonName"
+        android:text="Herlloo"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        android:translationX="20sp"
+        android:translationY="10sp" />
+
+    <Button
+        android:id="@+id/doneWithNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="55sp"
+        android:text="Done"
+        android:textSize="18sp"
+        android:translationX="310sp"
+        android:translationY="-702sp" />
 </LinearLayout>
