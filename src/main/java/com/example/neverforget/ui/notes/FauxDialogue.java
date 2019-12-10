@@ -7,31 +7,36 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.neverforget.R;
 
 public class FauxDialogue extends Activity {
 
-    String subject;
-    EditText subjectInput;
+    String subject, email;
+    EditText subjectInput, emailInput;
     Button add;
 
     protected void onCreate(Bundle savedInstanceSate) {
         super.onCreate(savedInstanceSate);
         setContentView(R.layout.dialouge_new_note);
 
-        subjectInput = (EditText) findViewById(R.id.subject);
+        subjectInput = findViewById(R.id.setpassw);
+        emailInput = findViewById(R.id.Email);
 
-        add = (Button) findViewById(R.id.addButton);
+        add = findViewById(R.id.addButton);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 subject = subjectInput.getText().toString();
-                subject = "\t \t" + subject;
-                Intent intent = new Intent(FauxDialogue.this, NotePad.class);
-                intent.putExtra("subject", subject);
-                startActivity(intent);
+                if (subject.equals("qwerty")) {
+                    Intent intent = new Intent(FauxDialogue.this, PhotoVault.class);
+                    startActivity(intent);
+                } else {
+                    subject = "\t \t" + subject;
+                    Intent intent = new Intent(FauxDialogue.this, NotePad.class);
+                    intent.putExtra("subject", subject);
+                    intent.putExtra("email", email);
+                    startActivity(intent);
+                }
             }
         });
     }

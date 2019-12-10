@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.neverforget.R;
 
 public class NotePad extends AppCompatActivity {
@@ -24,15 +23,19 @@ public class NotePad extends AppCompatActivity {
         Button done = findViewById(R.id.doneWithNotes);
         EditText notes = findViewById(R.id.actualNotes);
         String subjectString = getIntent().getStringExtra("subject");
+        String emailString = getIntent().getStringExtra("email");
         subjectLine.setText(subjectString);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String notesString = notes.getText().toString();
+                notes.setText(notesString);
                 NotesActivity.notePadList.add(NotePad.this);
-                startActivity(new Intent(NotePad.this, NotesActivity.class));
+                Intent intent = new Intent(NotePad.this, NotesActivity.class);
+                intent.putExtra("email", emailString);
+                intent.putExtra("note", notesString);
+                startActivity(intent);
             }
         });
     }
-
-
 }

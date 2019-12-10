@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".photoVault">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:translationX="310dp"
+        android:translationY="622dp"
+        app:maxImageSize="45dp"
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="628dp"
+        tools:layout_editor_absoluteY="1960dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -28,18 +41,21 @@
         android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/textView">
 
         <LinearLayout
+            android:id="@+id/picHolder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/pic"
                 android:layout_width="326dp"
                 android:layout_height="417dp"
+                android:layout_gravity="center"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
     </ScrollView>

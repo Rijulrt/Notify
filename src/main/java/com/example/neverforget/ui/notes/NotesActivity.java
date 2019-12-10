@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,55 +25,69 @@ import java.util.Stack;
 
 public class NotesActivity extends AppCompatActivity {
 
+    static int count = 0;
     LinearLayout llnotes;
     public static List<NotePad> notePadList = new ArrayList<>();
+    public static String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        email = getIntent().getStringExtra("email");
         FloatingActionButton addNotesButton = findViewById(R.id.addNotesButton);
         llnotes = findViewById(R.id.noteList);
         TextView noNote = findViewById(R.id.noNoteText);
         noNote.setVisibility(View.VISIBLE);
-        if (notePadList != null) {
-            noNote = findViewById(R.id.noNoteText);
-            noNote.setVisibility(View.GONE);
-            for (NotePad a : notePadList) {
-                View noteChunk = getLayoutInflater().inflate(R.layout.chunk_notes,
-                        llnotes, false);
-                TextView subject = noteChunk.findViewById(R.id.subjectLine);
-                Button delete = noteChunk.findViewById(R.id.deleteButton);
-                subject.setText(a.subjectLine.getText());
-                llnotes.addView(noteChunk);
-                if (delete != null) {
-                    delete.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            llnotes.removeView(noteChunk);
-                            notePadList.remove(a);
-                        }
-                    });
-                }
-            }
+        if (count == 0) {
             addNotesButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(NotesActivity.this, FauxDialogue.class));
+                    startActivity(new Intent(NotesActivity.this, SetPass.class));
+                    count++;
                 }
             });
+        } else {
+            if (notePadList != null) {
+                noNote = findViewById(R.id.noNoteText);
+                noNote.setVisibility(View.GONE);
+                for (NotePad a : notePadList) {
+                    View noteChunk = getLayoutInflater().inflate(R.layout.chunk_notes,
+                            llnotes, false);
+                    TextView subject = noteChunk.findViewById(R.id.subjectLine);
+                    Button delete = noteChunk.findViewById(R.id.deleteButton);
+                    subject.setText(a.subjectLine.getText());
+                    llnotes.addView(noteChunk);
+                    if (delete != null) {
+                        delete.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                llnotes.removeView(noteChunk);
+                                notePadList.remove(a);
+                            }
+                        });
+                    }
+                }
+                addNotesButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(NotesActivity.this, FauxDialogue.class);
+                        intent.putExtra("password", getIntent().getStringExtra("password"));
+                        startActivity(intent);
+                    }
+                });
 
-        }
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
-        });
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                }
+            });
+        }
 
     }
 

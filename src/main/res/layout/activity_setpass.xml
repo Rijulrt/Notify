@@ -6,18 +6,17 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/newNoteHeading"
+        android:id="@+id/setPassHeading"
         android:layout_width="412dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:background="#1A237E"
         android:contentDescription="@string/new_note"
-        android:hint="@string/new_note"
         android:scaleType="center"
         android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
-        tools:text="@string/new_note" />
+        tools:text="Enter Password" />
 
     <EditText
         android:id="@+id/setpassw"
@@ -28,13 +27,13 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:hint="@string/subject" />
+        android:hint="Password" />
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/addPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create" />
+        android:text="Set" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
